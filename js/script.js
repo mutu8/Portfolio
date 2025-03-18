@@ -97,6 +97,19 @@ const nav = document.querySelector(".nav"),
                     allSection[i].classList.toggle("open");
                 }
             }
+
+    // CV
+    document.getElementById('downloadLink').addEventListener('click', function(event) {
+        event.preventDefault();  // Evitar el comportamiento predeterminado del enlace
+
+        var link = document.createElement('a');
+        link.href = '/docs/CV.pdf';  // Reemplaza con la ruta correcta de tu archivo
+        link.download = 'CV.pdf';  // Reemplaza con el nombre deseado para el archivo descargado
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+    
     // Gif
     document.addEventListener("DOMContentLoaded", function() {
         let images = document.querySelectorAll(".hover-img"); // Selecciona todos los elementos con la clase hover-img
@@ -106,3 +119,32 @@ const nav = document.querySelector(".nav"),
             img.addEventListener("mouseleave", () => img.src = img.dataset.static);
         });
     });
+
+    // EmailJS
+    const btn = document.getElementById('button');
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita la recarga de la página
+        console.log("Form submitted"); // Verifica que el evento se ejecuta
+    
+        const btn = document.getElementById('button');
+        btn.innerText = 'Sending...';
+    
+        const serviceID = 'default_service';
+        const templateID = 'template_0hnkndd';
+    
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            btn.innerText = 'Send message';
+            alert('Sent!');
+    
+            // LIMPIAR FORMULARIO DESPUÉS DE ENVIAR
+            document.getElementById('form').reset();
+    
+          }, (err) => {
+            btn.innerText = 'Send message';
+            console.error("Error sending email:", err);
+            alert(JSON.stringify(err));
+          });
+    });
+    

@@ -52,16 +52,7 @@
                             <a href="#contact" class="btn" id="downloadLink">Download CV</a>
 
                             <script>
-                            document.getElementById('downloadLink').addEventListener('click', function(event) {
-                                event.preventDefault();  // Evitar el comportamiento predeterminado del enlace
-
-                                var link = document.createElement('a');
-                                link.href = '/docs/CV.pdf';  // Reemplaza con la ruta correcta de tu archivo
-                                link.download = 'CV.pdf';  // Reemplaza con el nombre deseado para el archivo descargado
-                                document.body.appendChild(link);
-                                link.click();
-                                document.body.removeChild(link);
-                            });
+                            
                             </script>
 
                         </div>  
@@ -101,7 +92,7 @@
                                         <p>Age: <span>23</span></p>
                                     </div>
                                     <div class="info-item padd-15">
-                                        <p>Website: <span>www.domain.com</span></p>
+                                        <p>Website: <span>ystevencs.me</span></p>
                                     </div>
                                     <div class="info-item padd-15">
                                         <p>Email: <span>yordy65@hotmail.com</span></p>
@@ -454,33 +445,33 @@
                     <!--Contact form-->
                     <div class="row">
                         <div class="contact-form padd-15">
-                            <div class="row">
-
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
+                            <form id="form">
+                                <div class="row">
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Name">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <button type="submit" id="button" class="btn">Send message</button>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
-                                    </div>
-                                </div>
-
-                                <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn">Send message</button>
-                                    </div>
-                                </div>
-
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -510,7 +501,11 @@
      <!--Style switcher end-->
      <!--JS files-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+     <script type="text/javascript"> emailjs.init('SCiW_Z8jpeptOSg16') </script>
      <script src="js/script.js"></script>
      <script src="js/style-switcher.js"></script>
+
+
 </body>
 </html>
