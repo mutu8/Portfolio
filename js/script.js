@@ -1,6 +1,6 @@
 /* typing animation */
 var typed = new Typed(".typing", {
-    strings: ["", "Web Designer", "Web Developer", "Graphic Designer"],
+    strings: ["", ".NET Developer", "Web Developer", "Bacend Developer"],
     typeSpeed:100,
     BackSpeed:60,
     loop:true
@@ -97,4 +97,12 @@ const nav = document.querySelector(".nav"),
                     allSection[i].classList.toggle("open");
                 }
             }
-      
+    // Gif
+    document.addEventListener("DOMContentLoaded", function() {
+        let images = document.querySelectorAll(".hover-img"); // Selecciona todos los elementos con la clase hover-img
+
+        images.forEach(img => {
+            img.addEventListener("mouseenter", () => img.src = img.dataset.gif);
+            img.addEventListener("mouseleave", () => img.src = img.dataset.static);
+        });
+    });

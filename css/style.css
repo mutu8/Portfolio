@@ -933,6 +933,8 @@ h3.my-profession
     }
 }
 
+
+
 @media (max-width:991px)
 {
     .contact .contact-info-item,
@@ -969,3 +971,4 @@ h3.my-profession
         max-width: 100%;
     }
 }
+
